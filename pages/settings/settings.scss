@@ -1,0 +1,67 @@
+page-settings 
+{
+  #input_label-sel
+  {
+    color:blue;
+    height:30px;
+    max-width: 70px;
+  }
+
+  #profile_select
+  {
+    height:30px;
+    max-width: 0px;
+  }
+  #input_label_str
+  {
+    color:blue;
+    width: 60px;
+  }
+
+  #icon
+  {
+    height:20px;
+    max-width: 20px;
+    float:right;
+  }
+
+
+  #input_label
+  {
+    color:blue;
+    width: 150px;
+  }
+  #input_field
+  {
+    max-width: 50px !important;
+  }
+  #currency_label
+  {
+    color:black;
+    font:bold;
+    max-width: 20px !important;
+    text-align:left;
+  }
+
+  
+  #input_fixed
+  {
+    color:grey;
+    width:70px;
+  }
+  #currency_label
+  {
+    color:black;
+    font:bold;
+  }
+  #skudb
+  { 
+    width:250px;
+    height:30px;
+  }
+  
+  #calcbut
+  { 
+    height:50px;
+  }
+}

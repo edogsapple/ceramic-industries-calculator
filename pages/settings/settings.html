@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/icon/ceramic.png" style="width:50px;height:20px;">
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+    <ion-list>
+
+      <!-- PROFILE DROP DOWN -->
+      <!-- ----------------- -->
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label id="input_label-sel">Select a profile</ion-label>
+              <ion-select [(ngModel)]="name" id="profile_select" [required]="true" (ionChange)='profileSelect()'>
+                <ion-option *ngFor="let name of names" [value]="name">
+                  {{ name }}
+                </ion-option>
+              </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col>  
+          <ion-item> 
+            <button ion-button id="icon" (click)="newProfile()">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+        <ion-col>  
+          <ion-item>
+            <!--<button ion-button id="icon">-->
+            <!--<input type="file" name="file" (change)="fileSelected($event)" style="opacity: 0">-->
+            <button ion-button id="icon" (click)="loadProfile()">
+              <ion-icon name="arrow-dropup-circle"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+        <ion-col>  
+          <ion-item> 
+            <button ion-button id="icon" (click)="delProfile()">
+              <ion-icon name="remove"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <!-- Name input field -->
+        <ion-item>
+          <ion-label id="input_label_str">Name</ion-label>
+          <ion-input type="text" [(ngModel)]="name" value="" placeholder="Profile name"></ion-input>
+        </ion-item>
+        <!-- ------------- -->
+      </ion-row>
+      
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label id="input_label">Trade discount</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-input id="input_field" type="number" [(ngModel)]="trade" value="" placeholder="0"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-label id="currency_label">%</ion-label>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label id="input_label">Settle discount</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-input id="input_field" type="number" [(ngModel)]="settle" value="" placeholder="0"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-label id="currency_label">%</ion-label>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col width-70>
+          <ion-item>
+            <ion-label id="input_label">Rebate     </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col width-25>
+          <ion-input id="input_field" type="number" [(ngModel)]="rebate" value="" placeholder="0"></ion-input>
+        </ion-col>
+        <ion-col width-5>
+          <ion-label id="currency_label">%</ion-label>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-item>
+        <ion-label id="input_fixed"><b><i>VAT</i></b></ion-label>
+        <ion-label id="input_fixed"><b><i>14 %</i></b></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label id="input_fixed"><b><i>Currency</i></b></ion-label>
+        <ion-label id="input_fixed"><b><i>Rands</i></b></ion-label>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button full (click)="saveProfile()" id="calcbut" name="settingssavebut">Save</button>
+      </ion-item>
+      <!--<ion-item>
+        <button ion-button full (click)="getProfile2()" id="calcbut" name="settingssavebut">get</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button full (click)="removeProfile()" id="calcbut" name="settingssavebut">remove</button>
+      </ion-item>-->
+      <ion-label font-size="4px"> <i>Version 1.0.0 (build 107) </i></ion-label>
+  </ion-list>
+</ion-content>

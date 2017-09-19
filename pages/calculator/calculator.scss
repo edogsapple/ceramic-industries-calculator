@@ -1,0 +1,46 @@
+page-calculator 
+{
+  #input_label
+  {
+    color:blue;  
+    width:150px;
+  }
+  
+  #input_field
+  {
+    max-width: 70px !important;
+  }
+  #currency_label
+  {
+    color:black;
+    font:bold;
+    max-width: 20px !important;
+    text-align:left;
+  }
+  #percentage_label
+  {
+    color:black;
+    font:bold;
+    width: 20px;
+    text-align:left;
+  }
+  #label_value
+  {
+    text-align:right;
+  }
+
+
+
+
+  #skudb
+  {
+    width:250px;   
+    height:30px;
+  }
+
+  #calcbut
+  {
+    height:50px;
+  }
+
+}
