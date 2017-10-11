@@ -160,18 +160,29 @@ export class CalculatorPage
     }
     else
     {
-      //Calculate values
-      let total_discount=(Number(this.trade)+Number(this.settle))/100;
-      console.log(total_discount);
-      this.nett=(Number(this.list_price)-(Number(this.list_price)*total_discount)).toFixed(2);
-      console.log(this.nett);
-      let tmp = this.nett*(Number(this.rebate)/100);
-      this.net_asp = (this.nett-tmp).toFixed(2);
-      console.log(this.net_asp);
+      let net_trade = (Number(this.list_price)-(Number(this.list_price)*Number(this.trade)/100)).toFixed(2);
+      let net_settle = (net_trade-(net_trade*Number(this.settle)/100)).toFixed(2);
+      let net_rebate = (net_trade-(net_trade*Number(this.rebate)/100)).toFixed(2);
+      let net_final = (net_trade-((net_trade*Number(this.settle)/100)+(net_trade*Number(this.rebate)/100))).toFixed(2);
       let retail_excl = Number(this.retail)/1.14;
-      tmp = (retail_excl-this.nett)*100;
+      let tmp = (retail_excl-net_trade)*100;
       this.gross_profit=(tmp/retail_excl).toFixed(2); 
-      console.log(this.gross_profit);      
+      console.log(this.gross_profit);
+
+      //Calculate values
+      //let total_discount=(Number(this.trade)+Number(this.settle))/100;
+      //console.log(total_discount);
+      //this.nett=(Number(this.list_price)-(Number(this.list_price)*total_discount)).toFixed(2);
+      //console.log(this.nett);      
+      
+      //let tmp = this.nett*(Number(this.rebate)/100);
+      //this.net_asp = (this.nett-tmp).toFixed(2);
+      //console.log(this.net_asp);
+
+      //let retail_excl = Number(this.retail)/1.14;
+      //tmp = (retail_excl-this.nett)*100;
+      //this.gross_profit=(tmp/retail_excl).toFixed(2); 
+      //console.log(this.gross_profit);      
     }
 
   }
