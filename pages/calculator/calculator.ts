@@ -18,8 +18,12 @@ export class CalculatorPage
   public name;
   public list_price;
   public retail;
-  public nett;
-  public net_asp;
+  //public nett;
+  //public net_asp;
+  public net_trade;
+  public net_settle;
+  public net_rebate;
+  public net_final;
   public gross_profit;
 
   isenabled:boolean=false;
@@ -83,8 +87,12 @@ export class CalculatorPage
     }
 
     // Clear result fields
-    this.nett="";
-    this.net_asp="";
+    //this.nett="";
+    //this.net_asp="";
+    this.net_trade="";
+    this.net_settle="";
+    this.net_rebate="";
+    this.net_final="";
     this.gross_profit="";
   }
 
@@ -136,8 +144,12 @@ export class CalculatorPage
       }
     } 
 
-    this.nett="";
-    this.net_asp="";
+    //this.nett="";
+    //this.net_asp="";
+    this.net_trade="";
+    this.net_settle="";
+    this.net_rebate="";
+    this.net_final="";
     this.gross_profit="";
   
     //Trigger event for selected profile
@@ -160,12 +172,12 @@ export class CalculatorPage
     }
     else
     {
-      let net_trade = (Number(this.list_price)-(Number(this.list_price)*Number(this.trade)/100)).toFixed(2);
-      let net_settle = (net_trade-(net_trade*Number(this.settle)/100)).toFixed(2);
-      let net_rebate = (net_trade-(net_trade*Number(this.rebate)/100)).toFixed(2);
-      let net_final = (net_trade-((net_trade*Number(this.settle)/100)+(net_trade*Number(this.rebate)/100))).toFixed(2);
+      this.net_trade = (Number(this.list_price)-(Number(this.list_price)*Number(this.trade)/100)).toFixed(2);
+      this.net_settle = (this.net_trade-(this.net_trade*Number(this.settle)/100)).toFixed(2);
+      this.net_rebate = (this.net_trade-(this.net_trade*Number(this.rebate)/100)).toFixed(2);
+      this.net_final = (this.net_trade-((this.net_trade*Number(this.settle)/100)+(this.net_trade*Number(this.rebate)/100))).toFixed(2);
       let retail_excl = Number(this.retail)/1.14;
-      let tmp = (retail_excl-net_trade)*100;
+      let tmp = (retail_excl-this.net_trade)*100;
       this.gross_profit=(tmp/retail_excl).toFixed(2); 
       console.log(this.gross_profit);
 
