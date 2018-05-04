@@ -176,7 +176,7 @@ export class CalculatorPage
       this.net_settle = (this.net_trade-(this.net_trade*Number(this.settle)/100)).toFixed(2);
       this.net_rebate = (this.net_trade-(this.net_trade*Number(this.rebate)/100)).toFixed(2);
       this.net_final = (this.net_trade-((this.net_trade*Number(this.settle)/100)+(this.net_trade*Number(this.rebate)/100))).toFixed(2);
-      let retail_excl = Number(this.retail)/1.14;
+      let retail_excl = Number(this.retail)/1.15;
       let tmp = (retail_excl-this.net_trade)*100;
       this.gross_profit=(tmp/retail_excl).toFixed(2); 
       console.log(this.gross_profit);
